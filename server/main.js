@@ -1,5 +1,12 @@
 import { Meteor } from 'meteor/meteor';
 
-Meteor.startup(() => {
-  // code to run on server at startup
-});
+
+var connectHandler = WebApp.connectHandlers; // get meteor-core's connect-implementation
+
+// attach connect-style middleware for response header injection
+Meteor.startup(function () {
+  connectHandler.use(function (req, res, next) {
+    res.setHeader("Access-Control-Allow-Origin", "*"); 
+    return next();
+  })
+})
