@@ -32,8 +32,8 @@ Meteor.startup(() => {
 					return err;
 				} else {
 					console.log("Voila It worked!");
-					console.log(response);
-					return response;
+					console.log(data);
+					return data;
 				}
 			})
 		}
