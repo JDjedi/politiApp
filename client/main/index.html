@@ -40,7 +40,7 @@ Released   : 20140322
           </div>
           <div id="tweet-box">
             {{> tweetAppRequest}}
-            <p>{{> syriaTweet}}</p>
+            {{> syriaTweet}}
           </div>
           
         </div>
@@ -90,9 +90,9 @@ Released   : 20140322
 </template>
 
 <template name="syriaTweet">
-  {{#with status}}
-    {{status.statuses}}
-  {{/with}}
+<!--   {{#with status}}
+    <p>{{status}}</p>
+  {{/with}} -->
 </template>
 
 

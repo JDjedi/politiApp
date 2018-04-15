@@ -15,7 +15,6 @@ Meteor.startup(() => {
 
 	Meteor.methods({
 		tweetNow: function(){
-
 			var Twit = require('twit');
 
 			var T = new Twit({
@@ -26,19 +25,20 @@ Meteor.startup(() => {
 			  timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
 			});
 
-			T.get('search/tweets', { q: 'Syria since:2018-04-13', count: 1 }, function(err, data, response) {
+			T.get('users/lookup', { screen_name: 'realDonaldTrump, SenateMajLdr, USSupremeCourt' }, function(err, data, response) {
 				if (err) {
 					console.log("Something went wrong!");
+					console.log(err);
+					return err;
 				} else {
 					console.log("Voila It worked!");
-					return data;
+					console.log(response);
+					return response;
 				}
 			})
 		}
 	});
 });
-
-
 
 
 

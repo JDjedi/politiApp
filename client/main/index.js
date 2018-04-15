@@ -9,15 +9,28 @@ if (Meteor.isClient) {
 		'click .find-a-tweet': function(){
 			Meteor.call("tweetNow", function(error, response) {
 		  	if (error) {
-		  		// Session.set('status', {error: err});
+		  		alert('Error');
 		  	} else {
-		  		// Session.set('status', response);
-		  		console.log(response)
-					return response
+		  		Session.set("status", response);
+		  		console.log(response);
+		  		return response;
 				}
 			});
 		}
 	});
+
+
+	// Template.tweetAppRequest.onCreated(function() {
+	// 	Meteor.call("tweetNow", function(error, response) {
+	//   	if (error) {
+	//   		alert('Error');
+	//   	} else {
+	//   		Session.set("status", response);
+	//   		console.log(status)
+	//   		console.log(response)
+	// 		}
+	// 	});
+	// })
 }
 
 
