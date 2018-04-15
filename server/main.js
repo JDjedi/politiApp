@@ -1,21 +1,20 @@
 
-
-
-
-
-
 import { Meteor } from 'meteor/meteor';
 
 Meteor.startup(() => {
+
+	Future = Npm.require('fibers/future');
 
 	WebApp.connectHandlers.use(function (req, res, next) {
     res.setHeader("Access-Control-Allow-Origin", "*"); 
     return next();
   })
 
+
 	Meteor.methods({
 		tweetNow: function(){
 			var Twit = require('twit');
+			var future = new Future();
 
 			var T = new Twit({
 			  consumer_key:         'Sse8REMzb6VNZvcfGT0Z3T5F2',
@@ -33,21 +32,13 @@ Meteor.startup(() => {
 				} else {
 					console.log("Voila It worked!");
 					console.log(data);
-					return data;
-				}
-			})
+					future["return"](data)
+				}				
+			});
+			return future.wait();
 		}
 	});
 });
-
-
-
-
-
-
-
-
-
 
 
 

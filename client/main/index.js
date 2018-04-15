@@ -11,26 +11,13 @@ if (Meteor.isClient) {
 		  	if (error) {
 		  		alert('Error');
 		  	} else {
-		  		Session.set("status", response);
-		  		console.log(response);
+		  		Session.set("account", response);
+		  		console.log('response:', response);
 		  		return response;
 				}
 			});
 		}
 	});
-
-
-	// Template.tweetAppRequest.onCreated(function() {
-	// 	Meteor.call("tweetNow", function(error, response) {
-	//   	if (error) {
-	//   		alert('Error');
-	//   	} else {
-	//   		Session.set("status", response);
-	//   		console.log(status)
-	//   		console.log(response)
-	// 		}
-	// 	});
-	// })
 }
 
 
