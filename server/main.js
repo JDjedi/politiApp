@@ -15,6 +15,7 @@ Meteor.startup(() => {
 
 	Meteor.methods({
 		tweetNow: function(){
+
 			var Twit = require('twit');
 
 			var T = new Twit({
@@ -23,14 +24,14 @@ Meteor.startup(() => {
 			  access_token:         '510936252-iKweDgvqdSmNZMOEmVwcdXlzQlVkZNl7ShQzefE5',
 			  access_token_secret:  'zLDjI7NcXUs6UyTWucMZVczyDV4PP2sZzzbvok9a0QNW8',
 			  timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
-			})
-			T.get('search/tweets', { q: 'Syria since:2018-04-13', count: 3 }, function(err, data, response) {
+			});
+
+			T.get('search/tweets', { q: 'Syria since:2018-04-13', count: 1 }, function(err, data, response) {
 				if (err) {
 					console.log("Something went wrong!");
-					console.log(err);
 				} else {
 					console.log("Voila It worked!");
-					console.log(data);
+					return data;
 				}
 			})
 		}

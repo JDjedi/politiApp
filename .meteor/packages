@@ -23,4 +23,4 @@ shell-server@0.3.1            # Server-side component of the `meteor shell` comm
 iron:router
 #aldeed:simple-schema@1.5.3
 #aldeed:collection2-core@2.0.1
-
+session
