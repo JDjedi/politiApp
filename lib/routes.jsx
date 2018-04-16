@@ -13,6 +13,10 @@ Router.route('/contact', function() {
 	this.render('contact', {to: 'main'});
 });
 
+Router.route('/legislative', function() {
+	this.render('legislative', {to: 'main'});
+});
+
 
 Router.configure({ //used to make a default template for all routes
 	layoutTemplate: 'ApplicationLayout'

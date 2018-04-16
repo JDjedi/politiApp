@@ -1,0 +1,166 @@
+
+
+<template name="legislative">
+  <body>
+    <div class="wrapper">
+      <div id="banner" class="container"><img src="images/banner.jpg" width="1200" height="500" alt=""></div>
+
+      <div id="welcome" class="container">  
+        <div class="title">
+          <h2>The Senate Leadership</h2>
+        </div>
+      </div>
+      
+      <div id="portfolio" class="container">
+
+        <div class="column1">
+          <div class="box">
+            <h3></h3>
+        	</div>
+      	</div>
+
+        <div class="column2">
+          <div class="box">
+            <h2>Majority Leader</h2>
+            {{> tweetAppRequestSenMajLdr}}
+        	</div>
+        </div>
+
+        <div class="column3">
+          <div class="box">
+            <h2>Minority Leader</h2>
+            {{> tweetAppRequestSenMinLdr}}
+      		</div>
+        </div>
+
+        <div class="column4">
+          <div class="box">
+            <h3></h3>
+        	</div>
+        </div>
+
+      </div>
+
+      <div id="welcome" class="container">  
+        <div class="title">
+          <h2>The House Leadership</h2>
+        </div>
+      </div>
+      <div id="portfolio" class="container">
+        <div class="column1">
+          <div class="box">
+            <h3></h3>
+        	</div>
+        </div>
+        <div class="column2">
+          <div class="box">
+            <h2>Majority Leader</h2>
+            {{> tweetAppRequestHouseMajLdr}}
+          </div>
+        </div>
+        <div class="column3">
+          <div class="box">
+            <h2>Minority Leader</h2>
+            {{> tweetAppRequestHouseMinLdr}}
+          </div>
+        </div>
+        <div class="column4">
+          <div class="box">
+            <h3></h3>
+        	</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</template>
+
+<template name="tweetAppRequestSenMajLdr">
+  <div>
+    {{#each senMajLdr}}
+      {{#if error}}
+        <p>There was an error</p>
+      {{else}}
+        <p>{{name}}</p>
+        <p>{{status.full_text}}</p>
+      {{/if}}
+    {{/each}}
+  </div>
+  <button class="button button-small" id="find-a-tweet-senMajLdr">What is the Senate Majority Leader Saying</button> 
+</template>
+
+<template name="tweetAppRequestSenMinLdr">
+  <div>
+    {{#each senMinLdr}}
+      {{#if error}}
+        <p>There was an error</p>
+      {{else}}
+        <p>{{name}}</p>
+        <p>{{status.full_text}}</p>
+      {{/if}}
+    {{/each}}
+  </div>
+  <button class="button button-small" id="find-a-tweet-senMinLdr">What is the Senate Minority Leader Saying</button> 
+</template>
+
+<template name="tweetAppRequestHouseMajLdr">
+  <div>
+    {{#each houseMajLdr}}
+      {{#if error}}
+        <p>There was an error</p>
+      {{else}}
+        <p>{{name}}</p>
+        <p>{{status.full_text}}</p>
+      {{/if}}
+    {{/each}}
+  </div>
+  <button class="button button-small" id="find-a-tweet-houseMajLdr">What is the House Majority Leader Saying</button> 
+</template>
+
+<template name="tweetAppRequestHouseMinLdr">
+  <div>
+    {{#each houseMinLdr}}
+      {{#if error}}
+        <p>There was an error</p>
+      {{else}}
+        <p>{{name}}</p>
+        <p>{{status.full_text}}</p>
+      {{/if}}
+    {{/each}}
+  </div>
+  <button class="button button-small" id="find-a-tweet-houseMinLdr">What is the House Minority Leader Saying</button> 
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
