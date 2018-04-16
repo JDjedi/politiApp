@@ -19,7 +19,7 @@ Released   : 20140322
       <div id="welcome" class="container">
             
         <div class="title">
-          <h2>Welcome to our website</h2>
+          <h2>Welcome to Polis</h2>
         </div>
           <p>This is <strong>PolitiApp</strong>, a free, fully standards-compliant CSS template designed by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>. The photos in this template are from <a href="http://fotogrph.com/"> Fotogrph</a>. This free template is released under the <a href="http://templated.co/license">Creative Commons Attribution</a> license, so you're pretty much free to do whatever you want with it (even use it commercially) provided you give us credit for it. Have fun :) </p>
       </div>
@@ -29,13 +29,13 @@ Released   : 20140322
         <div id="tbox1">
           <div class="title">
             <h2>The Supreme Court</h2>
+            {{> tweetAppRequestSCOTUS}}
           </div>
-          <!-- {{> tweetAppRequest}} -->
         </div>
 
         <div id="tbox2">
           <div class="title">
-            <h2>The Presidency</h2>
+            <h2>The President</h2>
           </div>
           {{> tweetAppRequestPresident}}
         </div>
@@ -45,11 +45,10 @@ Released   : 20140322
           <div class="title">
             <h2>The Senate and the House</h2>
           </div>
-          <!-- {{> tweetAppRequest}} -->
         </div>
       </div>
 
-      <!-- Other centers of power within the U.S. gov? -->
+<!--       Other centers of power within the U.S. gov?
       <div id="portfolio" class="container">
         <div class="column1">
           <div class="box">
@@ -75,7 +74,7 @@ Released   : 20140322
             <p>Rutrum fermentum nibh in augue praesent urna congue rutrum.</p>
           <a href="#" class="button button-small">Etiam posuere</a> </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </body>
 </template>
@@ -83,7 +82,7 @@ Released   : 20140322
 
 <template name="tweetAppRequestPresident">
   <div>
-    {{#each account}}
+    {{#each president}}
       {{#if error}}
         <p>There was an error</p>
       {{else}}
@@ -92,10 +91,22 @@ Released   : 20140322
       {{/if}}
     {{/each}}
   </div>
-  <button class="button" id="find-a-tweet">Find a tweet</button> 
+  <button class="button" id="find-a-tweet-president">Find a tweet</button> 
 </template>
 
-
+<template name="tweetAppRequestSCOTUS">
+  <div>
+    {{#each supCourt}}
+      {{#if error}}
+        <p>There was an error</p>
+      {{else}}
+        <p>{{name}}</p>
+        <p>{{status.full_text}}</p>
+      {{/if}}
+    {{/each}}
+  </div>
+  <button class="button" id="find-a-tweet-sc">Find a tweet</button> 
+</template>
 
 
 

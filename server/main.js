@@ -12,7 +12,7 @@ Meteor.startup(() => {
 
 
 	Meteor.methods({
-		tweetNow: function(){
+		tweetNow: function(publicFigure){
 			this.unblock();
 			var Twit = require('twit');
 			var future = new Future();
@@ -25,7 +25,7 @@ Meteor.startup(() => {
 			  timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
 			});
 
-			T.get('users/lookup', { screen_name: 'realDonaldTrump', tweet_mode: 'extended' }, function(err, data, response) {
+			T.get('users/lookup', { screen_name: publicFigure, tweet_mode: 'extended' }, function(err, data, response) {
 				if (err) {
 					console.log("Something went wrong!");
 					return err;
