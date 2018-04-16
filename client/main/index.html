@@ -33,15 +33,15 @@ Released   : 20140322
         <div id="tbox2">
           <div class="title">
             <h2>The President</h2>
+            {{> tweetAppRequestPresident}}
           </div>
-          {{> tweetAppRequestPresident}}
         </div>
 
 
         <div id="tbox3">
           <div class="title">
             <h2>The Senate and the House</h2>
-            <a href="/legislative"> <button class="button">What are the Legislative Leaders Saying</button></a>
+            <a href="/legislative"> <button class="button">Legislative Leaders</button></a>
           </div>
         </div>
       </div>
@@ -61,7 +61,7 @@ Released   : 20140322
       {{/if}}
     {{/each}}
   </div>
-  <button class="button" id="find-a-tweet-president">What is the President Saying</button> 
+  <button class="button" id="find-a-tweet-president">Presidents Tweets</button> 
 </template>
 
 <template name="tweetAppRequestSCOTUS">
@@ -75,7 +75,7 @@ Released   : 20140322
       {{/if}}
     {{/each}}
   </div>
-  <button class="button" id="find-a-tweet-sc">What is the Supreme Court Deciding on</button> 
+  <button class="button" id="find-a-tweet-sc">Supreme Court Tweets</button> 
 </template>
 
 
