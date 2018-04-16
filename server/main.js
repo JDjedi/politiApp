@@ -13,6 +13,7 @@ Meteor.startup(() => {
 
 	Meteor.methods({
 		tweetNow: function(){
+			this.unblock();
 			var Twit = require('twit');
 			var future = new Future();
 
@@ -24,14 +25,12 @@ Meteor.startup(() => {
 			  timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
 			});
 
-			T.get('users/lookup', { screen_name: 'realDonaldTrump, SenateMajLdr, USSupremeCourt' }, function(err, data, response) {
+			T.get('users/lookup', { screen_name: 'realDonaldTrump', tweet_mode: 'extended' }, function(err, data, response) {
 				if (err) {
 					console.log("Something went wrong!");
-					console.log(err);
 					return err;
 				} else {
 					console.log("Voila It worked!");
-					console.log(data);
 					future["return"](data)
 				}				
 			});
