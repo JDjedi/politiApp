@@ -16,9 +16,9 @@ Released   : 20140322
       <div id="welcome" class="container">
             
         <div class="title">
-          <h2>Welcome to Polis</h2>
+          <h2>Welcome to polis</h2>
         </div>
-          <p>This is <strong>PolitiApp</strong>, a free, fully standards-compliant CSS template designed by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>. The photos in this template are from <a href="http://fotogrph.com/"> Fotogrph</a>. This free template is released under the <a href="http://templated.co/license">Creative Commons Attribution</a> license, so you're pretty much free to do whatever you want with it (even use it commercially) provided you give us credit for it. Have fun :) </p>
+          <p>Your one stop snapshot of what the U.S. Government's leaders are thinking.</p>
       </div>
 
       <div id="three-column" class="container">
@@ -41,7 +41,7 @@ Released   : 20140322
         <div id="tbox3">
           <div class="title">
             <h2>The Senate and the House</h2>
-            <a href="/legislative"> <button class="button">Legislative Leaders</button></a>
+            <a href="/legislative"> <button class="button">Legislative Leaders Page</button></a>
           </div>
         </div>
       </div>
@@ -56,12 +56,13 @@ Released   : 20140322
       {{#if error}}
         <p>There was an error</p>
       {{else}}
-        <p>{{name}}</p>
+        <h3>{{name}}</h3>
         <p>{{status.full_text}}</p>
+        <img src="{{status.profile_image_url}}">
       {{/if}}
     {{/each}}
   </div>
-  <button class="button" id="find-a-tweet-president">Presidents Tweets</button> 
+  <button class="button" id="find-a-tweet-president">View Last Tweet</button> 
 </template>
 
 <template name="tweetAppRequestSCOTUS">
@@ -70,12 +71,12 @@ Released   : 20140322
       {{#if error}}
         <p>There was an error</p>
       {{else}}
-        <p>{{name}}</p>
+        <h3>{{name}}</h3>
         <p>{{status.full_text}}</p>
       {{/if}}
     {{/each}}
   </div>
-  <button class="button" id="find-a-tweet-sc">Supreme Court Tweets</button> 
+  <button class="button" id="find-a-tweet-sc">View Last Tweet</button> 
 </template>
 
 

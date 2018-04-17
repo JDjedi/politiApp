@@ -22,6 +22,7 @@
         <div class="column2">
           <div class="box">
             <h2>Majority Leader</h2>
+            <br>
             {{> tweetAppRequestSenMajLdr}}
         	</div>
         </div>
@@ -29,6 +30,7 @@
         <div class="column3">
           <div class="box">
             <h2>Minority Leader</h2>
+            <br>
             {{> tweetAppRequestSenMinLdr}}
       		</div>
         </div>
@@ -55,12 +57,14 @@
         <div class="column2">
           <div class="box">
             <h2>Majority Leader</h2>
+            <br>
             {{> tweetAppRequestHouseMajLdr}}
           </div>
         </div>
         <div class="column3">
           <div class="box">
             <h2>Minority Leader</h2>
+            <br>
             {{> tweetAppRequestHouseMinLdr}}
           </div>
         </div>
@@ -80,12 +84,12 @@
       {{#if error}}
         <p>There was an error</p>
       {{else}}
-        <p>{{name}}</p>
+        <h3>{{name}}</h3>
         <p>{{status.full_text}}</p>
       {{/if}}
     {{/each}}
   </div>
-  <button class="button button-small" id="find-a-tweet-senMajLdr">Senate Majority Leader</button> 
+  <button class="button button-small" id="find-a-tweet-senMajLdr">View Last Tweet</button> 
 </template>
 
 <template name="tweetAppRequestSenMinLdr">
@@ -94,12 +98,12 @@
       {{#if error}}
         <p>There was an error</p>
       {{else}}
-        <p>{{name}}</p>
+        <h3>{{name}}</h3>
         <p>{{status.full_text}}</p>
       {{/if}}
     {{/each}}
   </div>
-  <button class="button button-small" id="find-a-tweet-senMinLdr">Senate Minority Leader</button> 
+  <button class="button button-small" id="find-a-tweet-senMinLdr">View Last Tweet</button> 
 </template>
 
 <template name="tweetAppRequestHouseMajLdr">
@@ -108,12 +112,12 @@
       {{#if error}}
         <p>There was an error</p>
       {{else}}
-        <p>{{name}}</p>
+        <h3>{{name}}</h3>
         <p>{{status.full_text}}</p>
       {{/if}}
     {{/each}}
   </div>
-  <button class="button button-small" id="find-a-tweet-houseMajLdr">House Majority Leader</button> 
+  <button class="button button-small" id="find-a-tweet-houseMajLdr">View Last Tweet</button> 
 </template>
 
 <template name="tweetAppRequestHouseMinLdr">
@@ -122,12 +126,12 @@
       {{#if error}}
         <p>There was an error</p>
       {{else}}
-        <p>{{name}}</p>
+        <h3>{{name}}</h3>
         <p>{{status.full_text}}</p>
       {{/if}}
     {{/each}}
   </div>
-  <button class="button button-small" id="find-a-tweet-houseMinLdr">House Minority Leader</button> 
+  <button class="button button-small" id="find-a-tweet-houseMinLdr">View Last Tweet</button> 
 </template>
 
 
