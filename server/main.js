@@ -27,11 +27,11 @@ Meteor.startup(() => {
 
 			T.get('users/lookup', { screen_name: publicFigure, tweet_mode: 'extended' }, function(err, data, response) {
 				if (err) {
-					console.log("Something went wrong!");
+					// console.log("Something went wrong!");
 					// console.log(err);
 					return err;
 				} else {
-					console.log("Voila It worked!");
+					// console.log("Voila It worked!");
 					// console.log(data);
 					future["return"](data)
 				}				
