@@ -18,7 +18,7 @@ Released   : 20140322
         <div class="title">
           <h2>Welcome to polis</h2>
         </div>
-          <p>Your one stop snapshot of what the U.S. Government's leaders are thinking.</p>
+          <p>Your snapshot of what the U.S. Government's leaders are thinking.</p>
       </div>
 
       <div id="three-column" class="container">
@@ -56,9 +56,9 @@ Released   : 20140322
       {{#if error}}
         <p>There was an error</p>
       {{else}}
+        <img src="{{profile_image_url_https}}" class="profileImage">
         <h3>{{name}}</h3>
         <p>{{status.full_text}}</p>
-        <img src="{{status.profile_image_url}}">
       {{/if}}
     {{/each}}
   </div>
@@ -71,6 +71,7 @@ Released   : 20140322
       {{#if error}}
         <p>There was an error</p>
       {{else}}
+        <img src="{{profile_image_url_https}}" class="profileImage">
         <h3>{{name}}</h3>
         <p>{{status.full_text}}</p>
       {{/if}}
